@@ -1,0 +1,13 @@
+.row
+  .small-12.medium-12.columns
+    %h2 All available questions
+
+- @questions.each do |question|
+  .row
+    .small-8.medium-8.columns
+      =link_to simple_format(question.body), question_path(question) 
+      %span.label.radius.secondary=question.chapter.name
+      =difficulty_label(question).html_safe
+      =link_to "Preview", preview_question_path(question), class: "button tiny radius right" 
+      %hr
+

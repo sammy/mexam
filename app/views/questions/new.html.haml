@@ -1,0 +1,40 @@
+.row
+  .small-12.medium-12.columns
+    %h2 Create a new question
+
+.row
+  .small-8.medium-8.columns
+    =form_for @question do |f|
+      
+      .row
+        .small-6.medium-6.columns
+          =f.label :body
+        .small-6.medium-6.columns
+          =f.text_area :body, class: 'radius'
+
+      .row
+        .small-6.medium-6.columns
+          =f.label :chapter_id, "Chapter"
+        .small-6.medium-6.columns
+          =f.collection_select :chapter_id, Chapter.all, :id, :name
+
+      .row
+        .small-6.medium-6.columns
+          =f.label :difficulty
+        .small-6.medium-6.columns
+          .range-slider.radius#difficulty{data: {slider: '', options: "display_selector: #sliderOutput1; start: 1; end: 5"}}
+            %span.range-slider-handle
+            %span.range-slider-active-segment
+        .small-2.medium-1.columns
+          =f.hidden_field :difficulty, id: 'sliderOutput1', readonly: true, class: 'radius'
+          %span{id: 'sliderOutput1'}
+
+      .row
+        .small-6.medium-6.columns
+          =f.label :question_image, "Image"
+        .small-6.medium-6.columns
+          =f.file_field :question_image, class: 'radius'
+
+      .row
+        .small-6.medium-12.columns
+          =f.submit "Save", class: 'button success radius right', data: { disable_with: 'Saving...' }

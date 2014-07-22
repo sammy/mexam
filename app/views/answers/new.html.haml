@@ -1,0 +1,36 @@
+.row
+  .small-12.medium-12.columns
+    %h2 Create answer
+    %h5.subheader= @question.body
+.row
+  .small-8.medium-8.columns
+    =form_for [@question,@answer] do |f|
+      
+      .row
+        .small-6.medium-6.columns
+          =f.label :body
+        .small-6.medium-6.columns
+          =f.text_field :body, class: 'radius'
+
+      .row
+        .small-6.medium-6.columns
+          =f.label :is_correct, 'Is correct?'
+        .small-6.medium-6.columns
+          .onoffswitch
+            =f.check_box :is_correct, class: 'onoffswitch-checkbox', :id => 'myonoffswitch'
+            =label_tag :myonoffswitch, class: 'onoffswitch-label' do
+              %span.onoffswitch-inner
+              %span.onoffswitch-switch 
+          
+      .row
+        .small-6.medium-12.columns
+          =f.submit "Save", class: 'button success radius right', data: { disable_with: 'Saving...' }
+          =link_to "Finished!", questions_path, class: 'button alert radius'
+
+/ <div class="onoffswitch">
+/     <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked>
+/     <label class="onoffswitch-label" for="myonoffswitch">
+/         <span class="onoffswitch-inner"></span>
+/         <span class="onoffswitch-switch"></span>
+/     </label>
+/ </div>

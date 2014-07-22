@@ -1,0 +1,30 @@
+.sticky
+  %nav.top-bar{"data-topbar" => ""}
+    %ul.title-area
+      %li.name
+        %h1
+          %a{href: "#"} MathExam &infin;
+      %li.toggle-topbar.menu-icon
+        %a{href: "#"}
+          %span Menu
+    - if logged_in?
+      %section.top-bar-section
+        / Right Nav Section
+        %ul.right
+          %li.has-dropdown
+            %a{href: '#'} #{fa_icon 'user'}&nbsp;&nbsp;Welcome, #{@current_user.full_name}
+            %ul.dropdown
+              %li
+                / %a{href: '#'} #{fa_icon 'cogs'}&nbsp;&nbsp;Settings
+                / %a{href: '#'} #{fa_icon 'sign-out'}&nbsp;&nbsp;Log Out
+                = link_to logout_path, method: :delete do
+                  #{fa_icon 'sign-out'}&nbsp;&nbsp;Log Out
+        %ul.left
+          %li
+            =link_to "Create Question", new_question_path
+          %li
+            =link_to "Show Questions", questions_path
+          / %li
+          /   %a{href: "#"} My Measures
+          / %li
+          /   %a{href: "#"} Reports

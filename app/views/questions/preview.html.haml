@@ -1,0 +1,10 @@
+.row
+  .small-12.medium-12.columns
+    %h4 
+      Question: 
+      %small=simple_format(@question.body)
+    %hr
+    %ul
+    - @question.answers.each do |answer|
+      %li=link_to "#{answer.body}", preview_answer_path(answer_id: answer.id, question_id: @question.id), method: 'post'
+      

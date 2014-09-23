@@ -3,7 +3,7 @@ class Question < ActiveRecord::Base
   mount_uploader :question_image, QuestionImageUploader
 
   belongs_to :chapter
-  has_many :answers
+  has_many :answers, dependent: :destroy
 
   after_validation :sanitize!
 

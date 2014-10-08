@@ -8,7 +8,8 @@
       =link_to simple_format(question.body), question_path(question) 
       %span.label.radius.secondary=question.chapter.name
       =difficulty_label(question).html_safe
-      =link_to "Preview", preview_question_path(question), class: "button tiny radius right"
       =link_to "Delete" , question_path(question.id), method: :delete, class: "button tiny radius right alert"
+      =link_to "Edit", edit_question_path(question.id,question.id), class: "button tiny radius right gutter"      
+      =link_to "Preview", preview_question_path(question), class: "button tiny radius right "
       %hr
 

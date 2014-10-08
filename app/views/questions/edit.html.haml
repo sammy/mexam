@@ -1,0 +1,23 @@
+.row
+  .small-12.medium-12.columns
+    %h2 Edit question: [#{@question.body[0..18]}...]
+
+.row
+  .small-8.medium-8.columns
+    =form_for @question do |f|
+
+      .row
+        .small-12.medium-12.columns
+          =f.label :body
+          =f.text_area :body
+
+
+          =f.fields_for :answers do |qa|
+            .row
+              .small-8.medium-8.columns
+                =qa.text_field :body
+              .small-2.medium-2.columns
+                =qa.label "Correct?"
+                =qa.check_box :is_correct
+
+          =f.submit "Update", class: 'button radius right', data: { disable_with: 'Updating...' }

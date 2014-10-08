@@ -20,6 +20,7 @@ gem 'rails_12factor'
 
 group :development do
   gem 'pry'
+  gem 'pry-remote'
   gem 'spring'
   gem 'better_errors'
   gem 'binding_of_caller'

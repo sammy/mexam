@@ -20,10 +20,27 @@
                 = link_to logout_path, method: :delete do
                   #{fa_icon 'sign-out'}&nbsp;&nbsp;Log Out
         %ul.left
-          %li
-            =link_to "Create Question", new_question_path
-          %li
-            =link_to "Show Questions", questions_path
+
+          %li.has-dropdown
+            %a{href: '#'} #{fa_icon 'user'}&nbsp;&nbsp;Questions
+            %ul.dropdown
+              %li
+                =link_to "Create Question", new_question_path
+                =link_to "Show Questions", questions_path
+        
+          %li.has-dropdown
+            %a{href: '#'} #{fa_icon 'user'}&nbsp;&nbsp;Chapters & Subchapters
+            %ul.dropdown
+              %li
+                =link_to "New Chapter", new_chapter_path
+                =link_to "Show Chapters", chapters_path
+        
+          %li.has-dropdown
+            %a{href: '#'} #{fa_icon 'user'}&nbsp;&nbsp;Exams
+            %ul.dropdown
+              %li
+                =link_to "New Exam", new_exam_path
+                =link_to "Show Exams"
           / %li
           /   %a{href: "#"} My Measures
           / %li

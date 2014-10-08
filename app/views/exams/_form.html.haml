@@ -1,0 +1,15 @@
+.row
+  .small-8.medium-8.columns
+    =form_for @exam do |f|
+      .row
+        .small-8.medium-8.columns
+          =f.label :title
+          =f.text_field :title
+      .row
+        .small-8.medium-8.columns
+          =f.label :codename
+          =f.text_field :codename
+
+      .row
+        .small-8.medium-8.columns
+          =f.submit "Save", class: 'button success radius right', data: { disable_with: 'Saving Exam...' }

@@ -1,0 +1,10 @@
+.row
+  .small-12.medium-12.columns
+    %h2 All Exams
+
+.row
+  .small-8.medium-8.columns
+    -@exams.each do |exam|
+      .row
+        =exam.title
+        =link_to "Edit", edit_exam_path(exam) 

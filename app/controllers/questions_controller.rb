@@ -25,6 +25,20 @@ class QuestionsController < ApplicationController
     @question = Question.find(params[:id])
   end
 
+  def edit
+    @question = Question.find(params[:id])
+  end
+
+  def update
+    @question = Question.find(params[:id])
+    if @question
+      @question.update_attributes(question_params)
+      flash[:success] = "Question updated!"
+      redirect_to home_path
+    end
+    # binding.remote_pry
+  end
+
   def preview
     @question = Question.find(params[:question_id])
   end

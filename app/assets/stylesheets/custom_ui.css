@@ -1,62 +1,67 @@
 .onoffswitch {
-    position: relative; width: 73px;
-    -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+  position: relative; width: 73px;
+  -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
 }
 
 .onoffswitch-checkbox {
-    display: none;
+  display: none;
 }
 
 .onoffswitch-label {
-    display: block; overflow: hidden; cursor: pointer;
-    border: 2px solid #999999; border-radius: 13px;
+  display: block; overflow: hidden; cursor: pointer;
+  border: 2px solid #999999; border-radius: 13px;
 }
 
 .onoffswitch-inner {
-    display: block; width: 200%; margin-left: -100%;
-    -moz-transition: margin 0.3s ease-in 0s; -webkit-transition: margin 0.3s ease-in 0s;
-    -o-transition: margin 0.3s ease-in 0s; transition: margin 0.3s ease-in 0s;
+  display: block; width: 200%; margin-left: -100%;
+  -moz-transition: margin 0.3s ease-in 0s; -webkit-transition: margin 0.3s ease-in 0s;
+  -o-transition: margin 0.3s ease-in 0s; transition: margin 0.3s ease-in 0s;
 }
 
 .onoffswitch-inner:before, .onoffswitch-inner:after {
-    display: block; float: left; width: 50%; height: 30px; padding: 0; line-height: 30px;
-    font-size: 14px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;
-    -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+  display: block; float: left; width: 50%; height: 30px; padding: 0; line-height: 30px;
+  font-size: 14px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;
+  -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
 }
 
 .onoffswitch-inner:before {
-    content: "YES";
-    padding-left: 10px;
-    background-color: #78C0A8; color: #FFFFFF;
+  content: "YES";
+  padding-left: 10px;
+  background-color: #78C0A8; color: #FFFFFF;
 }
 
 .onoffswitch-inner:after {
-    content: "NO";
-    padding-right: 10px;
-    background-color: #575454; color: #CF3030;
-    text-align: right;
+  content: "NO";
+  padding-right: 10px;
+  background-color: #575454; color: #CF3030;
+  text-align: right;
 }
 
 .onoffswitch-switch {
-    display: block; width: 18px; margin: 6px;
-    background: #FFFFFF;
-    border: 2px solid #999999; border-radius: 13px;
-    position: absolute; top: 0; bottom: 0; right: 39px;
-    -moz-transition: all 0.3s ease-in 0s; -webkit-transition: all 0.3s ease-in 0s;
-    -o-transition: all 0.3s ease-in 0s; transition: all 0.3s ease-in 0s; 
+  display: block; width: 18px; margin: 6px;
+  background: #FFFFFF;
+  border: 2px solid #999999; border-radius: 13px;
+  position: absolute; top: 0; bottom: 0; right: 39px;
+  -moz-transition: all 0.3s ease-in 0s; -webkit-transition: all 0.3s ease-in 0s;
+  -o-transition: all 0.3s ease-in 0s; transition: all 0.3s ease-in 0s; 
 }
 
 .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
-    margin-left: 0;
+  margin-left: 0;
 }
 
 .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
-    right: 0px; 
+  right: 0px; 
 }
 
 .range-slider-handle {
-    font-size: 1em;
-    font-weight: bold;
-    color: #fff;
-    padding: 2px 10px;
+  font-size: 1em;
+  font-weight: bold;
+  color: #fff;
+  padding: 2px 10px;
+}
+
+.gutter {
+  margin-right: 15px;
+  margin-left: 15px;
 }

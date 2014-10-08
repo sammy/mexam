@@ -1,0 +1,10 @@
+.row
+  .small-12.medium-12.columns
+    %h2 All Available Chapters
+
+    -@chapters.each do |chapter|
+
+      .row
+        .small-8.medium-8.columns
+          =chapter.name
+          =link_to "Edit", edit_chapter_path(chapter)

@@ -15,4 +15,8 @@ Rails.application.routes.draw do
     resources :answers
   end
 
+  resources :chapters
+
+  resources :exams
+
 end

@@ -1,7 +1,7 @@
 class ChaptersController < ApplicationController
   
   def index
-    @chapters = Chapter.all
+    @exams = Exam.all
   end
 
   def new
@@ -20,6 +20,10 @@ class ChaptersController < ApplicationController
     @chapter = Chapter.find(params[:id])
   end
 
+  def get_exam_chapters
+    @chapters = Chapter.where(exam_id: params[:id])
+    render partial: "chapters", locals: {chapters: @chapters} 
+  end
 
   private
 

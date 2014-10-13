@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   delete   'logout', to: 'sessions#destroy'
   get   'question/:question_id/preview', to: 'questions#preview', as: 'preview_question'
   post  'answer/preview', to: 'answers#preview', as: 'preview_answer'
+  get   'chapters/get_exam_chapters/:id', to: 'chapters#get_exam_chapters'
+
 
   resources :questions do
     resources :answers

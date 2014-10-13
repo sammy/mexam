@@ -3,7 +3,10 @@
     =form_for @chapter do |f|
       =f.label :name
       =f.text_field :name
+      =f.label :weight
+      =f.text_field :weight
       =f.label "Select Exam"
       =f.collection_select(:exam_id, Exam.all, :id, :title, prompt: true)
+      #exam_chapters
 
       =f.submit "Save", class: 'button success radius right', data: { disable_with: 'Saving...' }

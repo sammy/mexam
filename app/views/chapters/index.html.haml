@@ -2,9 +2,17 @@
   .small-12.medium-12.columns
     %h2 All Available Chapters
 
-    -@chapters.each do |chapter|
-
-      .row
-        .small-8.medium-8.columns
-          =chapter.name
-          =link_to "Edit", edit_chapter_path(chapter)
+-@exams.each do |exam|
+  .row
+    .small-8.medium-8.columns
+      %h4= exam.title
+  -exam.chapters.each do |chapter|
+    .row
+      .small-2.medium-2.columns
+        =chapter.name
+      .small-2.medium2.columns
+        #{chapter.subchapters.count} subchapters
+      .small-2.medium2.columns
+        =link_to "Edit", edit_chapter_path(chapter)
+      .small-6.medium-6.columns
+  %hr

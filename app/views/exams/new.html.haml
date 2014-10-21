@@ -4,3 +4,15 @@
 
 =render "form"
 
+%hr
+
+.row
+  .small-12.medium-12.columns
+    %h4 Import data from a file
+
+.row
+  .small-12.medium-12.columns
+    =form_tag import_exams_path, multipart: true do
+      =label_tag :file
+      =file_field_tag :file
+      =submit_tag "Import...", class: 'button tiny info rounded'

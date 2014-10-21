@@ -16,5 +16,11 @@ $(document).ready(function() {
   })
 });
 
-
-
+$(document).ready(function() {
+  $('.show_subchapters').click(function(){
+    id = $(this).attr('id');
+    jQuery.get('/chapters/show_subchapters/'+id, function(data){
+      $('.subchapter_'+id).html(data);
+    })
+  })
+});

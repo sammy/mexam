@@ -1,0 +1,16 @@
+.row
+  .small-12.medium-12.columns
+    - subchapters.each do |subchapter|
+      .row
+        .small-4.medium-4.columns
+          .subchapter= subchapter.name
+        .small-2.medium-2.columns
+          N/A
+        .small-2.medium-2.columns
+          N/A
+        .small-2.medium-2.columns
+          #{subchapter.number_of_questions}
+        .small-2.medium-2.columns
+          =link_to "Edit", edit_chapter_path(subchapter)
+%hr
+

@@ -20,9 +20,23 @@ class ChaptersController < ApplicationController
     @chapter = Chapter.find(params[:id])
   end
 
+  def update
+    @chapter = Chapter.find(params[:id])
+    if @chapter
+      @chapter.update_attributes(chapter_params)
+      flash[:success] = "Chapter has been updated!"
+      redirect_to chapters_path
+    end
+  end
+
   def get_exam_chapters
     @chapters = Chapter.where(exam_id: params[:id])
     render partial: "chapters", locals: {chapters: @chapters} 
+  end
+
+  def show_subchapters
+    @subchapters = Chapter.find(params[:id]).subchapters
+    render partial: "subchapters", locals: {subchapters: @subchapters}
   end
 
   private

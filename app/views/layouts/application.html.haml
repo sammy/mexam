@@ -11,8 +11,10 @@
     = csrf_meta_tags
     = stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Overlock:400,700,900,400italic,700italic,900italic'
     = javascript_include_tag 'application'
+    = mathjax_tag
 
   %body
+    / %math $$(Gamma(z) = \int_0^\infty t^{z-1}e^{-t}dt\,.$$
     = render 'shared/top_nav'
     = render 'shared/messages'
     .main

@@ -4,15 +4,24 @@
 
 -@exams.each do |exam|
   .row
-    .small-8.medium-8.columns
+    .small-12.medium-12.columns
       %h4= exam.title
-  -exam.chapters.each do |chapter|
+  -exam.chapters.main_chapters.each do |chapter|
     .row
-      .small-2.medium-2.columns
+      .small-4.medium-4.columns
         =chapter.name
-      .small-2.medium2.columns
-        #{chapter.subchapters.count} subchapters
+      .small-2.medium-2.columns
+        - if chapter.subchapters.count > 0
+          =link_to "#{chapter.subchapters.count} subchapters", {}, id: chapter.id, class: 'show_subchapters', remote:true
+        - else
+          0 subchapters
+      .small-2.medium-2.columns
+        #{chapter.weight_percent}
+      .small-2.medium-2.columns
+        #{chapter.number_of_questions}
       .small-2.medium2.columns
         =link_to "Edit", edit_chapter_path(chapter)
-      .small-6.medium-6.columns
+    .row
+      .small-12.medium-12.columns
+        %div{:class => 'subchapter_' + chapter.id.to_s }
   %hr

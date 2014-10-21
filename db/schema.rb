@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141012204851) do
+ActiveRecord::Schema.define(version: 20141021113129) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(version: 20141012204851) do
     t.integer  "exam_id"
     t.integer  "headchapter_id"
     t.integer  "weight"
+    t.string   "codename"
   end
 
   create_table "exams", force: true do |t|

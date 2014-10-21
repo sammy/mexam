@@ -2,6 +2,8 @@
   .small-12.medium-12.columns
     %h2 Create a new question
 
+
+%hr
 .row
   .small-8.medium-8.columns
     =form_for @question do |f|
@@ -38,3 +40,11 @@
       .row
         .small-6.medium-12.columns
           =f.submit "Save", class: 'button success radius right', data: { disable_with: 'Saving...' }
+
+.row
+  .small-12.medium-12.columns
+    %h3 Import Questions
+    =form_tag import_questions_path, multipart: true do
+      =label_tag :file
+      =file_field_tag :file
+      =submit_tag "Import...", class: 'button tiny info rounded'

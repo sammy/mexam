@@ -50,6 +50,15 @@ class QuestionsController < ApplicationController
     flash[:success] = "Question has been deleted."
   end
 
+  def import
+    data = Question.import(params[:file])
+    message = []
+    message << "#{data.count} questions imported!<br/>"
+    data.each { |q| message << "#{q["question_body"]} -> <strong>#{q["chapter"]}</strong>"}
+    flash[:success] = message.join('<br/>').html_safe 
+    redirect_to home_path
+  end
+
   private
 
   def question_params

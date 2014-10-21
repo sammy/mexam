@@ -29,6 +29,12 @@ class ExamsController < ApplicationController
     end
   end
 
+  def import
+    Exam.import(params[:file])
+    flash[:success] = 'Rows imported successfully'
+    redirect_to exams_path
+  end
+
   private
 
   def exam_params

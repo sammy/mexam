@@ -9,4 +9,12 @@ class Chapter < ActiveRecord::Base
   def self.main_chapters
     where(headchapter_id: nil)
   end
+
+  def weight_percent
+    weight == nil ? "N/A" : "#{weight}%"
+  end
+
+  def number_of_questions
+    "#{questions.count} questions"
+  end
 end

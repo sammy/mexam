@@ -17,8 +17,9 @@ gem 'foundation-rails'
 gem 'carrierwave'
 gem 'font-awesome-rails'
 gem 'rails_12factor'
+gem 'mathjax-rails'
 
-group :development do
+group :development, :test do
   gem 'pry'
   gem 'pry-remote'
   gem 'spring'

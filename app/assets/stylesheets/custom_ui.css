@@ -65,3 +65,10 @@
   margin-right: 15px;
   margin-left: 15px;
 }
+
+.subchapter {
+  font-size: 11px;
+  color: green;
+  margin: 3px;
+  font-weight: 900;
+}

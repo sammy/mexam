@@ -19,8 +19,9 @@ $(document).ready(function() {
 $(document).ready(function() {
   $('.show_subchapters').click(function(){
     id = $(this).attr('id');
+    container = '#subchapter_'+id
     jQuery.get('/chapters/show_subchapters/'+id, function(data){
-      $('.subchapter_'+id).html(data);
-    })
-  })
+      $('#subchapter_'+id).html(data).toggle();
+      })
+    });
 });

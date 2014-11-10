@@ -23,5 +23,5 @@
         =link_to "Edit", edit_chapter_path(chapter)
     .row
       .small-12.medium-12.columns
-        %div{:class => 'subchapter_' + chapter.id.to_s }
+        %div.hide{:id => 'subchapter_' + chapter.id.to_s }
   %hr

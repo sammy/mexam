@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require foundation
 //= require jquery.turbolinks
+//= require jquery.countdown
 //= require_tree .
 
 

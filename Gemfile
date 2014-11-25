@@ -18,6 +18,7 @@ gem 'carrierwave'
 gem 'font-awesome-rails'
 gem 'rails_12factor'
 gem 'mathjax-rails'
+gem 'jquery-countdown-rails'
 
 group :development, :test do
   gem 'pry'

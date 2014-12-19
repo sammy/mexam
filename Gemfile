@@ -19,6 +19,7 @@ gem 'font-awesome-rails'
 gem 'rails_12factor'
 gem 'mathjax-rails'
 gem 'jquery-countdown-rails'
+gem 'rake', '>= 10.4.0'
 
 group :development, :test do
   gem 'pry'

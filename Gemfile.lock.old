@@ -177,7 +177,6 @@ DEPENDENCIES
   pry-remote
   rails (= 4.1.1)
   rails_12factor
-  rake (>= 10.4.0)
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)
   spring
